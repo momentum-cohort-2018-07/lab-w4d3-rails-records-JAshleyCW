@@ -1,0 +1,24 @@
+
+<h1>Album List</h1>
+
+<table class="table table-striped">
+    <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Artist</th>
+        <th scope="col">Year</th>
+        <th colspan="3"></th>
+    </tr>
+
+    <% @records.each do |record| %>
+        <tr>
+            <td scope="row"><%= record.title %></td>
+            <td scope="row"><%= record.artist %></td>
+            <td scope="row"><%= record.year %></td>
+            <td><%= link_to 'Show', record_path(record) %></td>
+            <td><%= link_to 'Edit', edit_record_path(record) %></td>
+            <td><%= link_to 'Delete', record_path(record), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+    <% end %>
+</table><br>
+
+<%= link_to 'New Album', new_record_path %>

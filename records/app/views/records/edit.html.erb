@@ -1,0 +1,51 @@
+
+<h1>Edit Album</h1>
+
+
+
+<%= form_with(model: @record, local: true) do |form| %>
+
+    <% if @record.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(@record.errors.count, "error") %>
+                prohibited this article from being saved:
+            </h2>
+            <ul>
+                <% @record.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <form class="form-horizontal" action="/action_page.php">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="title">Title:</label>
+            <div class="col-sm-10">
+                <input type="title" class="form-control" id="title" placeholder="Enter title">
+            </div>
+        </div>
+    </form>
+    <form class="form-horizontal" action="/action_page.php">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="artist">Artist:</label>
+            <div class="col-sm-10">
+                <input type="artist" class="form-control" id="artist" placeholder="Enter artist">
+            </div>
+        </div>
+    </form>
+    <form class="form-horizontal" action="/action_page.php">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="year">Year:</label>
+            <div class="col-sm-10">
+                <input type="year" class="form-control" id="year" placeholder="Enter year">
+            </div>
+        </div>
+        <%= form.submit %><br><br>
+    </form>
+    
+     
+<% end %>
+
+<%= link_to 'Back', records_path %>

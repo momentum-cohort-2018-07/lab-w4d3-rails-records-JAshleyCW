@@ -1,0 +1,21 @@
+
+<h1>Records</h1>
+
+<p class="table-info">
+    <strong>Title:</strong>
+    <%= @record.title %>
+</p>
+
+<p class="table-success">
+    <strong>Artist:</strong>
+    <%= @record.artist %>
+</p>
+
+<p class="table-danger"> 
+    <strong>Year:</strong>
+    <%= @record.year %>
+</p>
+
+<%= link_to 'Edit', edit_record_path(@record) %> |
+<%= link_to 'Album List', records_path %>
+
